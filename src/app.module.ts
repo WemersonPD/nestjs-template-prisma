@@ -8,7 +8,6 @@ import { environments } from './config/environment/environment.config';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: `.env.${process.env.NODE_ENV}`,
       load: [environments],
       isGlobal: true,
     }),

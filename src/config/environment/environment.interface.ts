@@ -10,5 +10,6 @@ export const NodeEnvAllowedValuesMap: Map<string, INodeEnvAllowedValues> =
   ]);
 
 export interface IEnvironment {
-  NODE_ENV: INodeEnvAllowedValues;
+  nodeEnv: INodeEnvAllowedValues;
+  databaseUrl: string;
 }

@@ -1,18 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
 
 import { AppService } from './app.service';
 
 @Controller('app')
 export class AppController {
-  constructor(
-    private readonly appService: AppService,
-    private configService: ConfigService,
-  ) {}
+  constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    console.log(this.configService.get('NODE_ENV'));
+  async getHello(): Promise<string> {
     return this.appService.getHello();
   }
 }
